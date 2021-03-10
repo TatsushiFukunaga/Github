@@ -35,7 +35,7 @@ class SearchModel {
                     self.searchModelDelegate?.dataDidUpdate()
                 }
             } catch {
-                print(error)
+                return
             }
         }
         task.resume()

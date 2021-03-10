@@ -16,6 +16,10 @@ class SearchViewController: UIViewController, UISearchBarDelegate, SearchModelDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupTableView()
+    }
+    
+    private func setupTableView() {
         searchBar.placeholder = "GitHubのリポジトリを検索"
         searchBar.delegate = self
         
@@ -23,7 +27,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, SearchModelDe
         tableView.register(nib, forCellReuseIdentifier: "RepositoryCell")
     }
     
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if let word = searchBar.text {
             searchModel.searchModelDelegate = self
             searchModel.getData(word: word)

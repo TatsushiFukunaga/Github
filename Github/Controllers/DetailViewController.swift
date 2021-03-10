@@ -46,7 +46,8 @@ class DetailViewController: UIViewController, DetailModelDelegate {
     
     func dataDidUpdate(data: Data) {
         let image = UIImage(data: data)
-        DispatchQueue.main.async {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
             self.imageView.image = image
         }
     }
@@ -61,7 +62,6 @@ class DetailViewController: UIViewController, DetailModelDelegate {
     @IBAction func button(_ sender: Any) {
         performSegue(withIdentifier: "WebViewController", sender: nil)
     }
-    
     
 }
 

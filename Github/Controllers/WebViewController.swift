@@ -10,17 +10,20 @@ import WebKit
 
 class WebViewController: UIViewController{
     
-    var wkWebView = WKWebView()
+    private var wkWebView = WKWebView()
     
-    var backButton: UIButton!
-    var forwadButton: UIButton!
+    private var backButton: UIButton!
+    private var forwadButton: UIButton!
     
     var urlString : String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        setupWebView()
+    }
+    
+    private func setupWebView() {
         
         wkWebView.frame = view.frame
         wkWebView.navigationDelegate = self
@@ -34,11 +37,11 @@ class WebViewController: UIViewController{
         wkWebView.load(request)
         
         createWebControlParts()
+        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     private func createWebControlParts() {
@@ -84,24 +87,11 @@ class WebViewController: UIViewController{
         wkWebView.goForward()
     }
     
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }
 
 
 extension WebViewController: WKNavigationDelegate {
     
-    // ウェブのロード完了時に呼び出される
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         
         backButton.isHidden = (webView.canGoBack) ? false : true
@@ -109,7 +99,6 @@ extension WebViewController: WKNavigationDelegate {
     }
 }
 
-// target=_blank対策
 extension WebViewController: WKUIDelegate {
     
     func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration,
