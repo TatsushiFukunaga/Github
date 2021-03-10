@@ -41,6 +41,7 @@ class DetailViewController: UIViewController, DetailModelDelegate {
         if let imageURL = URL(string: repository.owner.avatarUrl) {
             detailModel.detailModelDelegate = self
             detailModel.getImage(url: imageURL)
+            imageView.layer.cornerRadius = imageView.frame.height / 2
         }
     }
     
