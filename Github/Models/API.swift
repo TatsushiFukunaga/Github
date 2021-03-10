@@ -7,14 +7,14 @@
 
 import Foundation
 
-protocol SearchModelDelegate: class {
+protocol apiDelegate: class {
     func dataDidUpdate()
 }
 
-class SearchModel {
+class API {
     
     var repositories: [Repository] = []
-    weak var searchModelDelegate: SearchModelDelegate?
+    weak var searchModelDelegate: apiDelegate?
     
     func getData(word: String) {
         

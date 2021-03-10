@@ -37,7 +37,7 @@ class DetailViewController: UIViewController {
         descriptionLabel.text = repository.description
     }
     
-    func setUpImage(){
+    func setUpImage() {
         if let imageURL = URL(string: repository.owner.avatarUrl) {
             Nuke.loadImage(with: imageURL, into: imageView)
             imageView.layer.cornerRadius = imageView.frame.height / 2
