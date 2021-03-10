@@ -26,6 +26,7 @@ struct Repository: Decodable {
 }
 
 struct Owner: Decodable {
+    let login: String
     let avatarUrl: String
 }
 

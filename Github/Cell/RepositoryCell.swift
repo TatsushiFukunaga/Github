@@ -12,6 +12,8 @@ class RepositoryCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var starLabel: UILabel!
     @IBOutlet weak var languageLabel: UILabel!
+    @IBOutlet weak var ownerLabel: UILabel!
+
     
     override func awakeFromNib() {
         super.awakeFromNib()

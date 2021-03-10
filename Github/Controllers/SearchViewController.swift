@@ -53,6 +53,7 @@ extension SearchViewController: UITableViewDataSource {
         cell.nameLabel.text = repository.name
         cell.starLabel.text = "\(repository.stargazersCount)"
         cell.languageLabel.text = repository.language ?? "Unspecified Language"
+        cell.ownerLabel.text = repository.owner.login
         return cell
         
     }

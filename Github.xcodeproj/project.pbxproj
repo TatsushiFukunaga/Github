@@ -74,12 +74,10 @@
 				43A1959925F7AC7500A3A7D7 /* SceneDelegate.swift */,
 				43A195B925F7AFDA00A3A7D7 /* Models */,
 				43A195AE25F7AE7D00A3A7D7 /* Controllers */,
-				43A1959D25F7AC7500A3A7D7 /* Main.storyboard */,
+				43A195C725F8653E00A3A7D7 /* StoryBoards */,
+				43A195C625F8650C00A3A7D7 /* Cell */,
 				43A195A025F7AC7B00A3A7D7 /* Assets.xcassets */,
-				43A195A225F7AC7B00A3A7D7 /* LaunchScreen.storyboard */,
 				43A195A525F7AC7B00A3A7D7 /* Info.plist */,
-				43A195C125F7B11C00A3A7D7 /* RepositoryCell.swift */,
-				43A195C225F7B11C00A3A7D7 /* RepositoryCell.xib */,
 			);
 			path = Github;
 			sourceTree = "<group>";
@@ -102,6 +100,24 @@
 				43A195BE25F7B09600A3A7D7 /* DetailModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		43A195C625F8650C00A3A7D7 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				43A195C125F7B11C00A3A7D7 /* RepositoryCell.swift */,
+				43A195C225F7B11C00A3A7D7 /* RepositoryCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		43A195C725F8653E00A3A7D7 /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				43A1959D25F7AC7500A3A7D7 /* Main.storyboard */,
+				43A195A225F7AC7B00A3A7D7 /* LaunchScreen.storyboard */,
+			);
+			path = StoryBoards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
