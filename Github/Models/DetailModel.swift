@@ -8,7 +8,7 @@
 import Foundation
 
 protocol DetailModelDelegate: class {
-    func updateView(data: Data)
+    func dataDidUpdate(data: Data)
 }
 
 class DetailModel {
@@ -20,7 +20,7 @@ class DetailModel {
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             
             guard let data = data, error == nil else { return }
-            self.detailModelDelegate?.updateView(data: data)
+            self.detailModelDelegate?.dataDidUpdate(data: data)
             
         }
         .resume()

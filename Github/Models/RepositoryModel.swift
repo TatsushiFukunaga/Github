@@ -7,17 +7,12 @@
 
 import Foundation
 
-struct RepositoryModel: Codable {
+struct RepositoryModel: Decodable {
     let totalCount : Int
     let items : [Repository]
-    
-    enum CodingKeys: String, CodingKey{
-        case totalCount = "total_count"
-        case items = "items"
-    }
 }
 
-struct Repository: Codable {
+struct Repository: Decodable {
     let name: String
     let fullName: String
     let language: String?
@@ -28,26 +23,9 @@ struct Repository: Codable {
     let owner: Owner
     let htmlUrl: String
     let description: String?
-    
-    private enum CodingKeys: String, CodingKey {
-        case name = "name"
-        case fullName = "full_name"
-        case language = "language"
-        case stargazersCount = "stargazers_count"
-        case watchersCount = "watchers_count"
-        case forksCount = "forks_count"
-        case openIssuesCount = "open_issues_count"
-        case owner = "owner"
-        case htmlUrl = "html_url"
-        case description = "description"
-    }
 }
 
-struct Owner: Codable {
+struct Owner: Decodable {
     let avatarUrl: String
-    
-    private enum CodingKeys: String, CodingKey {
-        case avatarUrl = "avatar_url"
-    }
 }
 

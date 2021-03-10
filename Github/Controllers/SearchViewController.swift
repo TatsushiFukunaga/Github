@@ -30,7 +30,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, SearchModelDe
         }
     }
     
-    func updateView() {
+    func dataDidUpdate() {
         tableView.reloadData()
     }
     
@@ -48,7 +48,7 @@ extension SearchViewController: UITableViewDataSource {
         let repository = searchModel.repositories[indexPath.row]
         cell.nameLabel.text = repository.name
         cell.starLabel.text = "\(repository.stargazersCount)"
-        cell.languageLabel.text = repository.language ?? "Some Language"
+        cell.languageLabel.text = repository.language ?? "Unspecified Language"
         return cell
         
     }

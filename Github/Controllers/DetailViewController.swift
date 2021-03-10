@@ -29,7 +29,7 @@ class DetailViewController: UIViewController, DetailModelDelegate {
     
     func setUpLabels(){
         titleLabel.text = repository.fullName
-        languageLabel.text = "Written in \(repository.language ?? "Some Language")"
+        languageLabel.text = "Written in \(repository.language ?? "Unspecified Language")"
         starsLabel.text = "\(repository.stargazersCount) stars"
         wathcersLabel.text = "\(repository.watchersCount) watchers"
         forksLabel.text = "\(repository.forksCount) forks"
@@ -44,7 +44,7 @@ class DetailViewController: UIViewController, DetailModelDelegate {
         }
     }
     
-    func updateView(data: Data) {
+    func dataDidUpdate(data: Data) {
         let image = UIImage(data: data)
         DispatchQueue.main.async {
             self.imageView.image = image
