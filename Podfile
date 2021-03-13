@@ -7,6 +7,5 @@ target 'Github' do
 
   # Pods for Github
     pod 'Nuke'
-    pod 'RealmSwift'
 
 end
