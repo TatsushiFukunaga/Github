@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SearchViewController: UIViewController, UISearchBarDelegate, apiDelegate {
+class SearchViewController: UIViewController, UISearchBarDelegate {
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet var tableView: UITableView!
@@ -26,13 +26,17 @@ class SearchViewController: UIViewController, UISearchBarDelegate, apiDelegate {
         let nib = UINib(nibName: "RepositoryCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "RepositoryCell")
     }
+  
+}
+
+extension SearchViewController: apiDelegate {
     
-     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        if let word = searchBar.text {
-            api.searchModelDelegate = self
-            api.getData(word: word)
-        }
-    }
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+       if let word = searchBar.text {
+           api.searchModelDelegate = self
+           api.getData(word: word)
+       }
+   }
     
     func dataDidUpdate() {
         tableView.reloadData()

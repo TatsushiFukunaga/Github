@@ -71,6 +71,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		439268D2260B1FF500A6E913 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				43A195BB25F7B07700A3A7D7 /* API.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		43A1958B25F7AC7400A3A7D7 = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +102,7 @@
 			children = (
 				43A1959725F7AC7500A3A7D7 /* AppDelegate.swift */,
 				43A1959925F7AC7500A3A7D7 /* SceneDelegate.swift */,
+				439268D2260B1FF500A6E913 /* Service */,
 				43A195B925F7AFDA00A3A7D7 /* Models */,
 				43A195AE25F7AE7D00A3A7D7 /* Controllers */,
 				43A195C725F8653E00A3A7D7 /* StoryBoards */,
@@ -118,7 +127,6 @@
 			isa = PBXGroup;
 			children = (
 				43A195B625F7AFC000A3A7D7 /* RepositoryModel.swift */,
-				43A195BB25F7B07700A3A7D7 /* API.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
