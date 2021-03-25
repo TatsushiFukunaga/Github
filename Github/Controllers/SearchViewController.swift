@@ -26,17 +26,18 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
         let nib = UINib(nibName: "RepositoryCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "RepositoryCell")
     }
-  
+    
 }
 
 extension SearchViewController: apiDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-       if let word = searchBar.text {
-           api.searchModelDelegate = self
-           api.getData(word: word)
-       }
-   }
+        if let word = searchBar.text {
+            api.searchModelDelegate = self
+            api.getData(word: word)
+            searchBar.resignFirstResponder()
+        }
+    }
     
     func dataDidUpdate() {
         tableView.reloadData()
